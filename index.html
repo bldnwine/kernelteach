@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kernel Teachings of the Buddha</title>
   <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #ffffff;
@@ -29,7 +30,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'JetBrains Mono', 'JetBrainsMono', monospace;
+      font-family: "Clash Grotesk", sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -64,7 +65,7 @@
       font-size: 1.5em;
       margin: 1.8em 0 0.7em;
       font-family: "Clash Grotesk", sans-serif;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0;
     }
 
@@ -93,7 +94,111 @@
     }
 
     .italic { font-style: italic; }
-    .bold { font-weight: bold; }
+    .bold { font-weight: 500; }
+
+    details.anapanasati {
+      margin: 1.8em 0;
+    }
+
+    details.anapanasati summary {
+      list-style: none;
+      cursor: pointer;
+      font-family: "Jost", sans-serif;
+      color: #714728;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      gap: 0.6em;
+      user-select: none;
+    }
+
+    details.anapanasati summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.anapanasati summary .arrow {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    details.anapanasati summary .line {
+      display: inline-block;
+      width: 0;
+      height: 2px;
+      background: #714728;
+      transition: width 0.3s ease;
+      vertical-align: middle;
+    }
+
+    details.anapanasati[open] summary .arrow {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    details.anapanasati[open] summary .line {
+      width: 80px;
+    }
+
+    details.anapanasati .content-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.7s ease;
+    }
+
+    details.anapanasati[open] .content-wrap {
+      max-height: 2000px;
+    }
+
+    .anapanasati .intro {
+      font-family: "Jost", sans-serif;
+      font-weight: 400;
+    }
+
+    details.dropdown-section {
+      padding: 15px;
+    }
+
+    details.dropdown-section summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6em;
+      font-family: "Jost", sans-serif;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    details.dropdown-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.dropdown-section summary .arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    details.dropdown-section[open] summary .arrow {
+      transform: rotate(90deg);
+    }
+
+    details.dropdown-section .intro {
+      font-family: "Jost", sans-serif;
+      font-weight: 400;
+    }
+
+    .anapanasati .content h4 {
+      font-family: "Jost", sans-serif;
+      font-weight: 500;
+      font-size: 1.2em;
+      margin: 1.4em 0 0.5em;
+      color: inherit;
+    }
   </style>
 </head>
 <body>
@@ -118,7 +223,7 @@
         <li><span class="bold">Right Mindfulness:</span> Clear awareness of body, feelings, mind, and phenomena.</li>
         <li><span class="bold">Right Concentration:</span> Developing meditative absorption (<span class="italic">jhāna</span>).</li>
       </ul>
-      <p class="italic"><strong>The Noble Tenfold Path</strong><br>
+      <p class="italic"><span style="font-weight: 600;">The Noble Tenfold Path</span><br>
 The Noble Eightfold Path is the path of the learner (sekha). When fully developed, it naturally culminates in two further factors for the arahant:</p>
       <ul>
         <li><span class="bold">Right Insight (sammā ñāṇa):</span> From perfected right concentration arises direct knowing — the complete ending of ignorance, the seeing of all conditioned phenomena as they arise and vanish, and the final severing of the remaining fetters.</li>
@@ -172,12 +277,14 @@ The Noble Eightfold Path is the path of the learner (sekha). When fully develope
   <p>This investigation is done while the mind is stilled and unified (Samadhi). By shifting focus entirely to the flicker (phenomenal oscillation) rather than the form (the conceptual narrative), the mind realizes the stream is entirely asāra (void of substance) and anattā (non-self). This precise data-parsing automatically triggers Disenchantment (nibbidā), which feeds Dispassion (virāga), culminating in the final cessation of the loop (nibbāna).</p>
 
   <section style="margin: 20px 0; border: 1px solid #444; border-radius: 8px; background: #1a1a1a;">
-  <details style="padding: 15px; cursor: pointer;">
-    <summary style="font-weight: bold; font-size: 1.1em; color: #ffffff; outline: none; font-family: "Clash Grotesk", sans-serif;">
+  <details class="dropdown-section">
+    <summary>
+      <span class="arrow">&gt;</span>
       [ The Seven factors of awakening ]
     </summary>
-    <div style="margin-top: 15px; color: #ffffff; line-height: 1.6;">
-      <p style="color: #ffffff;">The Buddha taught seven factors of awakening (<span class="italic">bojjhaṅga</span>): qualities that, when cultivated and balanced, overcome the hindrances, weaken the latent tendencies (<em>anusaya</em>), and lead directly to knowledge and liberation.</p>
+    <div class="content-wrap">
+      <div style="margin-top: 15px; color: #ffffff; line-height: 1.6;">
+      <p style="color: #ffffff;" class="intro">The Buddha taught seven factors of awakening (<span class="italic">bojjhaṅga</span>): qualities that, when cultivated and balanced, overcome the hindrances, weaken the latent tendencies (<em>anusaya</em>), and lead directly to knowledge and liberation.</p>
       <ol>
         <li><span class="bold">Mindfulness (<span class="italic">Sati</span>):</span> Clear awareness and recollection of the present moment, countering heedlessness and autopilot reactions.</li>
         <li><span class="bold">Investigation of Phenomena (<span class="italic">Dhamma Vicaya</span>):</span> The careful discernment of experience, seeing phenomena as impermanent, unsatisfactory, and not‑self, and distinguishing wholesome from unwholesome states.</li>
@@ -188,6 +295,7 @@ The Noble Eightfold Path is the path of the learner (sekha). When fully develope
         <li><span class="bold">Equanimity (<span class="italic">Upekkhā</span>):</span> Even-minded neutrality toward all conditions, eroding clinging and self-interest.</li>
       </ol>
       <p style="color: #ffffff;">These factors support each other. Mindfulness enables investigation, investigation sustains energy, and so on, leading to liberation.</p>
+    </div>
     </div>
   </details>
 </section>
@@ -209,12 +317,37 @@ The Noble Eightfold Path is the path of the learner (sekha). When fully develope
   <ol>
     <li><span class="bold">First Jhāna:</span> Seclusion from sensuality and unwholesome states. Characterized by applied and sustained thought, rapture, and pleasure born of seclusion.</li>
     <li><span class="bold">Second Jhāna:</span> With the calming of applied and sustained thought, rapture and pleasure remain, accompanied by inner stillness and unification of mind.</li>
-    <li><span class="bold">Third Jhāna:</span> Rapture fades, leaving equanimity and mindfulness, with pleasure still present.</li>
+    <li><span class="bold">Third Jhāna:</span> Rapture fades, leaving equanimity and mindfulness, with subtle pleasure still present.</li>
     <li><span class="bold">Fourth Jhāna:</span> Pure equanimity and mindfulness, with neither pleasure nor pain.</li>
   </ol>
   
   <h3>Importance for Insight</h3>
   <p>Jhāna stabilizes the mind, making it clear and concentrated. This stability allows insight into impermanence, unsatisfactoriness, and not-self. Concentration and insight work together: concentration steadies the mind, insight liberates it.</p>
+
+  <details class="anapanasati">
+    <summary>
+      <span class="arrow">&gt;</span>
+      <span class="line"></span>
+      Ānāpānasati
+    </summary>
+    <div class="content-wrap">
+      <div class="content">
+        <p class="intro">Ānāpānasati is the 16-step (4 phases) breathing meditation that systematically calms the body and mind to develop right concentration and clear, liberating insight.</p>
+
+        <h4>1. Body</h4>
+        <p>First, become mindful of the breath, focusing on the inhales and the exhales. Do not try to control it, simply observe. While doing this the mind gradually becomes calm and the breath naturally slows down, calming the body. This gives rise to rapture and pleasure.</p>
+
+        <h4>2. Feelings</h4>
+        <p>Next do not cling to these feelings of rapture and pleasure nor push them away. Also do the same for any formations which arise in reaction to these pleasurable feelings (mental proliferation <span class="italic">papañca</span>). Stay detached by being mindful of the breath. When one does this, rapture (<span class="italic">pīti</span>) naturally matures and settles into a deeply peaceful, tranquil state of ease (<span class="italic">sukha</span>).</p>
+
+        <h4>3. Mind</h4>
+        <p>Next observe the mind itself, if the mind feels sluggish then uplift/gladden it (<span class="italic">abhipramodayaṃ cittaṃ</span>). If the mind is restless then calm/steady it (<span class="italic">samādahaṃ cittaṃ</span>). Let go of any remaining hindrances.</p>
+
+        <h4>4. Dhammas</h4>
+        <p>Use this rightly concentrated state of mind to observe the impermanence of everything (breath, formations, this state itself). Watch them flicker, fade and cease. This leads to disenchantment, which in turn gives rise to dispassion, and then total relinquishment (<span class="italic">paṭinissagga</span>).</p>
+      </div>
+    </div>
+  </details>
 
   <h2>The Removal of the Fetters (Saṃyojana)</h2>
   <ol>
@@ -231,12 +364,14 @@ The Noble Eightfold Path is the path of the learner (sekha). When fully develope
   </ol>
 
 <section style="margin: 20px 0; border: 1px solid #444; border-radius: 8px; background: #1a1a1a;">
-  <details style="padding: 15px; cursor: pointer;">
-    <summary style="font-weight: bold; font-size: 1.1em; color: #ffffff; outline: none; font-family: "Clash Grotesk", sans-serif;">
+  <details class="dropdown-section">
+    <summary>
+      <span class="arrow">&gt;</span>
       [ Anusaya (Latent Tendencies) ]
     </summary>
-    <div style="margin-top: 15px; color: #ffffff; line-height: 1.6;">
-      <p style="color: #ffffff;">The Buddha described anusaya as the deep underlying tendencies that remain dormant in the mind until conditions awaken them. They are not active volitions (saṅkhāra), but hidden seeds that fuel future craving and clinging.</p>
+    <div class="content-wrap">
+      <div style="margin-top: 15px; color: #ffffff; line-height: 1.6;">
+      <p style="color: #ffffff;" class="intro">The Buddha described anusaya as the deep underlying tendencies that remain dormant in the mind until conditions awaken them. They are not active volitions (saṅkhāra), but hidden seeds that fuel future craving and clinging.</p>
       <p style="color: #ffffff;">The seven anusaya are:</p>
       <ul>
         <li>Sensual lust (kāmarāga)</li>
@@ -250,6 +385,7 @@ The Noble Eightfold Path is the path of the learner (sekha). When fully develope
       <p style="color: #ffffff;">What they do: They lie beneath the surface, shaping perception and reaction.</p>
       <p style="color: #ffffff;">What they help explain: Why defilements re‑emerge even after temporary suppression, and why deep practice is needed to uproot them.</p>
       <p style="color: #ffffff;">When the anusaya are fully uprooted, the mind no longer inclines toward craving or ignorance — this is arahantship.</p>
+    </div>
     </div>
   </details>
 </section>

@@ -4,15 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kernel Teachings of the Buddha</title>
+    <style>
+      html:not(.fonts-loaded) body {
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+      html.fonts-loaded body {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease-in;
+      }
+    </style>
     <script>
-      (function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}document.documentElement.classList.add('no-transition')})();
+      (function(){
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme:dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+        document.documentElement.classList.add('no-transition');
+
+        function markFontsLoaded() {
+          document.documentElement.classList.add('fonts-loaded');
+        }
+
+        if ('fonts' in document) {
+          Promise.all([
+            document.fonts.load('1em "Karla"', 'ĀāĪīŪūÑñṀṁ'),
+            document.fonts.load('1em "Cormorant Garamond"', 'ĀāĪīŪūÑñṀṁ'),
+            document.fonts.load('1em "Inter"', 'ĀāĪīŪūÑñṀṁ')
+          ]).then(markFontsLoaded).catch(markFontsLoaded);
+          setTimeout(markFontsLoaded, 2000);
+        } else {
+          markFontsLoaded();
+        }
+      })();
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-CSfgK8B8.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C6xfDfqS.css">
+    <script type="module" crossorigin src="./assets/index-Dq92F8WN.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C3TjYDNL.css">
   </head>
   <body>
     <div id="root"></div>
